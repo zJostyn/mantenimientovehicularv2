@@ -1,0 +1,102 @@
+
+.reports-main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 900px;
+    left: 100px;
+}
+
+.card {
+    width: 410px;
+    height: inherit;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+#filtroVehiculos {
+  margin-left: 5px;
+}
+
+.btnImprimirMantenimientos {
+  position: relative;
+  left: 15px;
+  border-radius: 10px;
+}
+
+.imgSeleccionadoVehiculo {
+    width: 300px;
+    height: inherit;
+    border-radius: 5px;
+}
+
+.imgmant {
+    position: relative;
+    width: 300px;
+    height: inherit;
+    left: 60px;
+}
+
+.imgbutton{
+    width: 24px;
+    height: 24px;
+}
+
+.ventana-emergente {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .contenido-ventana {
+    width: 500px;
+    height: 200px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 15px;
+  }
+  
+  .cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    top: -20px;
+  }
+  
+  .cerrar:hover,
+  .cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .reagendar {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    top: 20px;
+  }
+
+  .btnAgendar {
+    position: absolute;
+    background-color: #dd3a08;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    margin-top: 3px;
+    left: 127px;
+    cursor: pointer;
+  }

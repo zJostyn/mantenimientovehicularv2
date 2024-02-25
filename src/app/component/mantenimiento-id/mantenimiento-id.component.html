@@ -1,0 +1,75 @@
+<div class="login-records-container">
+    <h2>Registros de Mantenimientos</h2>
+
+    <label for="filtroVehiculos">Elegir Vehiculo:</label>
+    <select id="filtroVehiculos" [(ngModel)]="filtroID" (change)="enviarMantenimiento(filtroID)" (change)="obtenerImagenVehiculoSeleccionado(filtroID)">
+        <option *ngFor="let mante of mantenimiento1" [value]="mante.id">{{ mante.nombre }} ID: {{mante.id}}</option>
+    </select>
+    <button class="btnImprimirMantenimientos" [routerLink]="['/protected/mantenimiento/pdf2/' + filtroID]" *ngIf="filtroID != 0">
+        <img class="imgbutton"
+        src="data:image/png;base64,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" />
+    </button>
+
+    <div class="VehiculoSeleccionado" *ngFor="let img of linkVehiculoSeleccionado">
+        <h3>Vehiculo Seleccionado:</h3>
+        <img class="imgSeleccionadoVehiculo" src="{{img.link}}" alt="VehiculoSeleccionado">
+    </div>
+
+    <br>
+
+    <div class="reports-main">
+        <div class="card" *ngFor="let mant of mantenimiento">
+            <mat-card class="reporte">
+                <div class="titulo">
+                    <br>
+                    <p>
+                        Identificador #{{mant.id}} - Mantenimiento: {{mant.alertas}}
+                        <br>
+                        Fecha Registro Mant: {{mant.fecha | date: 'dd/MM/yyyy'}}
+                    </p>
+                </div>
+                <img class="imgmant" mat-card-image src="/assets/img/mantenimiento.jpg">
+                <div class="descrip">
+                    <p>
+                    Tipo: {{mant.tipo}}
+                    <br>
+                    Kilometraje Actual: {{mant.kilometraje}}
+                    <br>
+                    Detalles: {{mant.detalles}}
+                    </p>
+                </div>
+                <mat-card-actions class="acciones">
+                    <button (click)="obtenerId(mant.id)">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKRJREFUSEvtlUEKgCAQRV93CYK6TsdpGXSZrlPQaYpAXVjDt8xd7mR03v8z6FQUXlXh/ChAD4xAYwjZgAGYLaEKsACtcLkC3VvA7i5aQlRclkglUPELwF/I7X1wHFsvDvDKpfXIonn+dfO+BsQK1T7wUx2ohNkl+gGXd/W0JH8P5NeUXSJFeAxIGTQx9HbwWC/5HJUTUCvpLm6OTjUyE/Pbx4oDDlBhOBmYaWrOAAAAAElFTkSuQmCC" />
+                    </button>
+                    <button *ngIf="mant.alertas === 'Por Realizar'" (click)="actualizarMantenimiento(mant.id)">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAmJJREFUSEu11VvIT2kUBvDfJ8doytzIIae5oGZCiiunKzkkIYeEUkIOcSEXyCFcSVPjULhwLHEhMYiaCwyuJqdIDjNiCheKlEMmtL7WX3u2/7e/L/W9V3u/e63nWe96n/XsBq28GloZX3MEHTAN4zAYffEZj3ED53ACH5sqtIpgPHYnaNVBH2Ix/qgX1BTBRmzIhCc4hjO4mXtDMAkz0Cv3VmF7maQeQQ38DebgdLalXoFtMB370Qkr8FsxsEwQVZ3COwzDnRaKYDiuIAhH489aXpGgC+6jO+biSAvBa2Er8SvuYVDt4osES7ALd/FLRVtqgN0wO0Fjr32qKwqcgpOxWSQ4i1DOsiSqOkBPXMRPWIS9GbwVa7APC8sE/yISI+nvCvSIiX73QUh0JJ5n/AhcxnUMLRO8TSWEGt5nwmocxIt8D/BL6J/go/CsUMyPeIlX6FomCFnGRf+AeF6Knfgnq4x2hjqi8tgL8Dh1cUXu68yP5//dQdz+gFTA7Ryg6HNUG4Dtci/aF1IsgwdetOWvFMrPZYKjmIVoy7YsK6Y0ehoeFCs8KHpeDzy+r8NmHMa8MkFo/xAeYCA+FUiu4b9mwNviEXpjJo6XCeJyo00RMB8HCs3tlwRPK9S1PG0ihjUG7UOZIN7H4vx3WEXYytW0ijHZ1sZa6pndWmxJNYTZ/V5RdXhPtCMGqzPiFKG8r6spu16PTRkVCgq7jkm/lZYQVjI5nbRH2ko46Y5yMVU/nInYk9NdcYjGaV6Q1vFNXHO/zI6Yigl5cTFk8csMtYTeL6SphcLqruYIqipv0bdWJ/gC1BJ8GY8uoFoAAAAASUVORK5CYII=" />
+                    </button>
+                    <button *ngIf="mant.alertas === 'Por Realizar'" (click)="mostrarVentanaEmergente()" (click)="definirIDMantenimientoSeleccionado(mant.id)">
+                        <img class="imgbutton"
+                            src="https://cdn-icons-png.flaticon.com/512/1077/1077077.png" />
+                    </button>
+                    <button [routerLink]="['/protected/mantenimiento/pdf1/' + mant.id]">
+                        <img class="imgbutton"
+                            src="data:image/png;base64,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" />
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+    <div id="ventanaEmergente" class="ventana-emergente">
+      <div class="contenido-ventana">
+        <span class="cerrar" (click)="cerrarVentanaEmergente()">&times;</span>
+        <div class="reagendar">
+          <p>Elije la fecha en la que deseas agendar el mantenimiento.</p>
+          <input class="fechaasignar" #fechaasignada type="date">
+          <br>
+          <br>
+          <button class="btnAgendar" (click)="reAgendarMantenimiento(fechaasignada.value)">Agendar Nueva Fecha</button>
+        </div>
+      </div>
+    </div>
+</div>

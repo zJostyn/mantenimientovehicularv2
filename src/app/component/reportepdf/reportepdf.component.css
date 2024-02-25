@@ -1,0 +1,192 @@
+.login-records-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+td {
+  padding: 8px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.icono-con-tooltip:hover .tooltip {
+  display: block;
+}
+
+.reports-main {
+  position: relative;
+}
+
+.infocarro {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 500px;
+  height: 165px;
+  top: 20px;
+  padding: 10px;
+}
+
+.titulo {
+  position: relative;
+  left: 240px;
+  top: -5px;
+}
+
+.datos {
+  position: relative;
+  top: -13px;
+  left: 250px;
+}
+
+.infocarro img {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  top: -172px;
+  border-radius: 5px;
+}
+
+.infocliente {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 500px;
+  height: 165px;
+  top: -145px;
+  left: 616px;
+  padding: 10px;
+}
+
+.infocliente h4 {
+  text-align: center  ;
+}
+
+.titulotabla {
+  position: relative;
+  top: -100px;
+  left: 400px;
+  margin-bottom: 50px;
+}
+
+.tablaestructura {
+  position: relative;
+  top: -100px;
+}
+
+.tablaestructura tr {
+  border-top: 1px solid black;;
+  border-bottom: 1px solid black;;
+}
+
+.tablaestructura th {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.tablaestructura td {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.contenedor-tabla {
+  position: relative;
+}
+
+
+.botones {
+  position: absolute;
+  bottom: 0;
+}
+
+.imprimir {
+  position: relative;
+  background-color: #dd3a08;
+  color: white;
+  border: 0px;
+  border-radius: 10px;
+  width: 140px;
+  height: 30px;
+  top: -20px;
+  left: 835px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.regresar {
+  position: relative;
+  background-color: #dd3a08;
+  color: white;
+  border: 0px;
+  border-radius: 10px;
+  width: 140px;
+  height: 30px;
+  top: -20px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+@media print {
+  .botones {
+    visibility: hidden;
+  }
+
+  .reports-main {
+    position: relative;
+    left: -100px;
+    width: 800px;
+  }
+
+  .infocarro {
+    position: relative;
+    left: -160px;
+  }
+
+  .infocliente {
+    position: relative;
+    left: 380px;
+  }
+
+  .titulotabla {
+    position: relative;
+    left: 230px;
+  }
+
+  .tablaestructura th {
+    color: black;
+  }
+
+  .tablaestructura {
+    position: relative;
+    left: -35px;
+  }
+}

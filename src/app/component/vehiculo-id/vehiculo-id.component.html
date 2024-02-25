@@ -1,0 +1,40 @@
+<div class="login-records-container ">
+    <h2>Registros de Vehículos</h2>
+    <div class="reports-main">
+        <div class="card" *ngFor="let vehi of vehiculos">
+            <mat-card class="reporte">
+                <mat-card-header class="titulo">
+                    Id. de Vehiculo #{{vehi.id}} Marca: {{vehi.marca}} Año: {{vehi.anio}}
+                </mat-card-header>
+                <div class="imagen">
+                    <img mat-card-image [src]=vehi.link>
+                </div>
+                <div class="descrip">
+                    <p class="tipo">Tipo del Vehiculo: {{vehi.tipo}}</p>
+                    <p class="modelo">Modelo del Vehiculo: {{vehi.modelo}}</p>
+                    <p class="chasis">Chasis del Vehiculo: {{vehi.chasis}}</p>
+                    <p class="placa">Placa del Vehiculo: {{vehi.placa}}</p>
+                    <p class="kilometraje">Kilometraje del Vehiculo: {{vehi.kilometraje}}</p>
+                </div>
+                <mat-card-actions class="acciones">
+                    <button class="darmantenimiento" (click)="obtenerID(vehi.id, vehi.link)">Dar Mantenimiento</button>
+                    <button class="editar" (click)="mostrarVentanaEmergente(vehi.id)">Editar</button>
+                    <div id="ventanaEmergente" class="ventana-emergente">
+                        <h3>Editar Registro</h3>
+                        <label>ID: <br><input type="text" [(ngModel)]="usuario_id" readonly ></label>
+                        <label>Marca: <br><input type="text" [(ngModel)]="marca"></label>
+                        <label>Modelo: <br><input type="text" [(ngModel)]="modelo"></label>
+                        <label>Año: <br><input type="text" [(ngModel)]="anio"></label>
+                        <label>Tipo: <br><input type="text" [(ngModel)]="tipo"></label>
+                        <label class="ladoderecho">Chasis: <br><input type="text" [(ngModel)]="chasis"></label>
+                        <label class="ladoderecho">Placa: <br><input type="text" [(ngModel)]="placa"></label>
+                        <label class="ladoderecho">Kilometraje: <br><input type="text" [(ngModel)]="kilometraje"></label>
+                        <label class="ladoderecho">Link: <br><input type="text" [(ngModel)]="link"></label>
+                        <button (click)="guardar(vehi.id)">Guardar Cambios</button>
+                        <button (click)="cerrarVentanaEmergente()">Cancelar</button>
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

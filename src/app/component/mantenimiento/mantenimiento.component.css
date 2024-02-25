@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    position: relative;
+    top: -60px;
+}
+
+.row {
+    margin-left: 10%;
+}
+
+.container {
+    width: 80%;
+    /* Establecemos un ancho máximo para mantener la legibilidad */
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.agregar {
+    margin-top: 10%;
+    width: 250px;
+    height: 250px;
+    /* Establecemos un ancho máximo para mantener la legibilidad */
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.agregar img {
+    position: relative;
+    top: -10px;
+    left: -12px;
+    width: 233px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+.cir {
+    border: #dd3a08;
+    background-color: #dd3a08;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: 34%;
+}
+
+h2 {
+    position: relative;
+    color: #dd3a08;
+    text-align: center;
+    top: 50px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #dd3a08;
+    /* Color de texto azul oscuro */
+    margin-bottom: 5px;
+}
+
+.custom-combobox {
+    position: relative;
+}
+
+.custom-combobox::after {
+    content: '\25BC';
+    /* Unicode para la flecha hacia abajo */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* Ajusta el valor para controlar la posición horizontal de la flecha */
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+}
+
+.col-6 {
+    position: relative;
+    left: -30px;
+}
+
+.col-6.datos {
+    position: relative;
+    top: -20px;
+}
+
+.divcoment {
+    position: relative;
+    left: -300px;
+    top: -67px;
+}
+
+.col-7 {
+    margin-bottom: -15px;
+}
+
+.col-7.agg{
+    position: absolute;
+    left: -155px;
+    top: 380px;
+    width: 300px;
+}
+
+#comentario {
+    width: 250px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 210px;
+    border: 1px solid #95a5a6;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #dd3a08;
+    /* Color de botón azul */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #dd3a08;
+    /* Color de botón azul más oscuro al pasar el mouse */
+}
+
+input:invalid {
+    border-color: red;
+}

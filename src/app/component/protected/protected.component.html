@@ -1,0 +1,31 @@
+<div *ngIf="rol === 'Administrador'" class="container perfil-cliente">
+    <img class="imgavatar" src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="">
+    <p class="nombre-completo">Administrador: {{ nombrecompleto }}</p>
+    <p class="rolcli">Rol: {{ rol }}</p>
+    <p class="email">Email: {{ email }}</p>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-usuarios></app-usuarios>
+    </div>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-vehiculos></app-vehiculos>
+    </div>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-mantenimientos></app-mantenimientos>
+    </div>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-contactos></app-contactos>
+    </div>
+</div>
+<div *ngIf="rol === 'Cliente'" class="container perfil-cliente">
+    <img class="imgavatar" src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="">
+    <p class="nombre-completo">Nombre Completo: {{ nombrecompleto }}</p>
+    <p class="rolcli">Rol: {{ rol }}</p>
+    <p class="email">Email: {{ email }}</p>
+    <button *ngIf="rol === 'Cliente' && id === 'vehiculos'" class="btn btn-danger" (click)="agregarVehiculo()">Agregar Vehículo</button>
+    <div class="container" *ngIf="rol === 'Cliente' && id === 'vehiculos'">
+        <app-vehiculo-id></app-vehiculo-id>
+    </div>
+    <div class="container" *ngIf="rol==='Cliente' && id === 'mantenimiento'">
+        <app-mantenimiento-id></app-mantenimiento-id>
+    </div>
+</div>

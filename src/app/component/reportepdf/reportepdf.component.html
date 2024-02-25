@@ -1,0 +1,64 @@
+
+<div class="reports-main">
+    <div class="estructura">
+        <div class="infocarro">
+            <h4 class="titulo">Informacion del Auto</h4>
+            <div class="datos">
+                <p>
+                    Nombre: {{mantenimiento[0].nombre}} <br>
+                    Marca: {{mantenimiento[0].marca}} <br>
+                    Año: {{mantenimiento[0].anio}} <br>
+                    Placa: {{mantenimiento[0].placa}} <br>
+                    Chasis: {{mantenimiento[0].chasis}} <br>
+                </p>
+            </div>
+            <img src="{{mantenimiento[0].link}}" alt="">
+        </div>
+        <div class="infocliente" *ngFor="let user of infousuario">
+            <h4>Informacion del Cliente del Mantenimiento</h4>
+            <p>
+                Nombre Completo: {{user.nombrecompleto}} <br>
+                Tipo: {{user.rol}} <br>
+                Correo de Contacto: {{user.email}} <br>
+            </p>
+        </div>
+
+        <h4 class="titulotabla">Datos del Mantenimiento</h4>
+
+        <div class="contenedor-tabla">
+            <table class="tablaestructura">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Detalles</th>
+                        <th>Tipo</th>
+                        <th>Kilometraje</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mant of mantenimiento">
+                        <td>{{mant.id }}</td>
+                        <td>{{ mant.detalles }}</td>
+                        <td>{{ mant.tipo }}</td>
+                        <td>{{ mant.kilometraje }}</td>
+                        <td>{{ mant.alertas }}</td>
+                        <td>{{ mant.fecha | slice:0:10 }}</td>
+                        <td>{{ mant.comentario }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="botones">
+            <button class="regresar" [routerLink]="['/protected/mantenimiento/']">
+                Regresar
+            </button>
+            <button class="imprimir" (click)="imprimirPDF()">
+                Imprimir PDF
+            </button>
+        </div>
+    </div>
+</div>
