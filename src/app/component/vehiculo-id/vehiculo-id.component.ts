@@ -135,7 +135,16 @@ export class VehiculoIDComponent {
         .then(response => {
           this.cerrarVentanaEmergente();
           console.log('Respuesta del servidor:', response.data);
-          Swal.fire("Éxito", "Vehículo Actualizado", "success");
+          Swal.fire({
+            title: "Éxito",
+            text: "Vehículo Actualizado",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  window.location.reload();
+              }
+          });
         })
         .catch(error => {
           console.error('Error al enviar la solicitud PUT:', error);

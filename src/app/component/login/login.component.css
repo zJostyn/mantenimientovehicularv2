@@ -19,8 +19,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.container .botonRegistrar{
+    color: #000000;
+}
+
 h2 {
-    color: #2874A6;
+    color: #000000;
     /* Color de texto azul oscuro */
     text-align: center;
     margin-bottom: 20px;
@@ -32,7 +36,7 @@ h2 {
 
 label {
     display: block;
-    color: #2874A6;
+    color: #000000;
     /* Color de texto azul oscuro */
     margin-bottom: 5px;
 }
@@ -42,7 +46,7 @@ input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #95a5a6;
+    border: 1px solid #dd3a08;
     /* Color de borde gris */
     border-radius: 4px;
 }
@@ -50,7 +54,7 @@ input[type="password"] {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #3498db;
+    background-color: #dd3a08;
     /* Color de botón azul */
     color: #ffffff;
     border: none;
@@ -59,6 +63,6 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #dd3a08;
     /* Color de botón azul más oscuro al pasar el mouse */
 }

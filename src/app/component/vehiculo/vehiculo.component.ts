@@ -94,7 +94,16 @@ export class VehiculoComponent {
       axios.post(url, formData)
         .then(response => {
           console.log('Respuesta del servidor:', response.data);
-          Swal.fire("Éxito", "Vehículo Registrado", "success");
+          Swal.fire({
+            title: "Éxito",
+            text: "Vehículo Registrado",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  window.location.reload();
+              }
+          });
         })
         .catch(error => {
           console.error('Error al enviar la solicitud POST:', error);

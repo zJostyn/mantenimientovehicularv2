@@ -74,8 +74,17 @@ export class MantenimientoComponent {
       axios.post(url, formData)
         .then(response => {
           console.log('Respuesta del servidor:', response.data);
-          Swal.fire("Éxito", "Mantenimiento Registrado", "success");
-          this.dialogRef.close();
+          Swal.fire({
+            title: "Éxito",
+            text: "Mantenimiento Registrado",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+          }).then((result) => {
+              if (result.isConfirmed) {
+                this.dialogRef.close();
+                window.location.reload();
+              }
+          });
         })
         .catch(error => {
           console.error('Error al enviar la solicitud POST:', error);
